@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89CC1F6225FF00BD85D0 /* GYChat.swift */; };
 		687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */; };
 		687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8BF1F61117600A8D6C1 /* ViewController.swift */; };
 		687DB8C31F61117600A8D6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687DB8C11F61117600A8D6C1 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		686F89CC1F6225FF00BD85D0 /* GYChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYChat.swift; sourceTree = "<group>"; };
 		687DB8BA1F61117600A8D6C1 /* ATAnimatons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATAnimatons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		687DB8BF1F61117600A8D6C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		686F89CB1F62255000BD85D0 /* GYChat */ = {
+			isa = PBXGroup;
+			children = (
+				686F89CC1F6225FF00BD85D0 /* GYChat.swift */,
+			);
+			name = GYChat;
+			path = GYLineView;
+			sourceTree = "<group>";
+		};
 		687DB8B11F61117600A8D6C1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +108,7 @@
 		687DB8BC1F61117600A8D6C1 /* ATAnimatons */ = {
 			isa = PBXGroup;
 			children = (
+				686F89CB1F62255000BD85D0 /* GYChat */,
 				687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */,
 				687DB8BF1F61117600A8D6C1 /* ViewController.swift */,
 				687DB8C11F61117600A8D6C1 /* Main.storyboard */,
@@ -263,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */,
+				686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */,
 				687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +529,7 @@
 				687DB8E41F61117600A8D6C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		687DB8E51F61117600A8D6C1 /* Build configuration list for PBXNativeTarget "ATAnimatonsTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +538,7 @@
 				687DB8E71F61117600A8D6C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		687DB8E81F61117600A8D6C1 /* Build configuration list for PBXNativeTarget "ATAnimatonsUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +547,7 @@
 				687DB8EA1F61117600A8D6C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
