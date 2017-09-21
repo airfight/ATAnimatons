@@ -12,14 +12,166 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+        let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
+        
+        let data = NSData(contentsOfFile: filePath!)! as Data
+        print(Int((data.count)/16))
+        
+        var sum = Int((data.count)/16)
+        
+        if Int((data.count)%16) != 0 {
+            sum += 1
+        }
+        print(UInt8(16))
+        print(UInt16(16))
+        for i in 0...sum {
+            
+            var sendData = Data.init(bytes: [0xC1])
+            
+            //固件包位置
+            sendData.append(OznerTools.dataFromInt(number: CLongLong(i), length: 2))
+            
+            if i != sum {
+                //固件包大小
+                sendData.append(Data.init(bytes: [0x10]))
+                sendData.append(data.subData(starIndex: i * 16, count: 16))
+
+            } else {
+                sendData.append(Data.init(bytes: [UInt8(data.count%16 == 0 ? 16 : data.count%16)]))
+                sendData.append(data.subData(starIndex: i * 16, count: (data.count%16 == 0 ? 16 : data.count%16)))
+
+            }
+//            Thread.sleep(forTimeInterval: 0.1)
+            //固件包
+         
+        }
+        
+        CheckSum(filePath!)
+        
+        
+        
+//        if data.count%16 > 0 {
+//            
+//            var sendData = Data.init(bytes: [0xC1])
+//            
+//            //固件包位置
+//            (data.count - data.count%16)/16
+//            //固件包大小
+//            sendData.append(Data.init(bytes: [UInt8(data.count%16)]))
+//            //固件包
+//            sendData.append(data.subData(starIndex: (data.count - data.count%16 - 1), count: data.count%16))
+//            
+//            
+//        }
+        
+        
+    }
+    
+
+    func CheckSum(_ path:String) {
+        
+        
+        let data = NSData(contentsOfFile: path)
+        
+        var size = (data?.length)!
+        
+        if size > 127 * 1024 {
+            print("文件过大")
+            return
+        }
+        
+        if (size % 256) != 0 {
+            size = (size/256) * 256 + 256
+        }
+    
+        let inputStream = InputStream(fileAtPath: path)
+        
+//        let readBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: size)
+        
+        var readBuffer:[UInt8] = [UInt8].init(repeating: 0xff, count: size)
+        
+        memset(&readBuffer, 0xff, size)
+        memcpy(&readBuffer, data?.bytes, (data?.length)!)
+//        inputStream?.read(&readBuffer, maxLength: (data?.length)!)
+        let allData = NSData.init(bytes: readBuffer, length: readBuffer.count)
+//        Data.init(repeating: <#T##UInt8#>, count: <#T##Int#>)
+        
+        var temp:Int = 0
+        var Checksum = 0
+        let len = size/4 - 1
+        
+        
+        
+        for i in 0...len {
+                        
+            var value:UInt16 = 0
+//
+//            allData.getBytes(&value, range: NSRange.init(location: i * 4, length: 4))
+//            temp += Int.init(UInt32(bigEndian: value))
+//            temp += Int( CFSwapInt16BigToHost(value))
+//            getUint(readBuffer, index: i)
+            
+//           temp +=  getUint(allData, index: i * 4)
+//            temp += Int(GYTools.big(toHostdata: allData as Data!, index: Int32(i * 4)))
+           temp += Int(GYTools.getBigHost(&readBuffer, index: Int32(i * 4)))
+        }
+        print(temp)
+        var tempMask = CLongLong(0x1FFFFFFFF);
+        tempMask -= CLongLong(0x100000000)
+        print(tempMask)
+        
+        Checksum = Int(CLongLong(temp) & tempMask)
+        print(Checksum)
+        inputStream?.close()// 1464111506 TwoCup//2146531471
+        print(OznerTools.dataFromInt(number: CLongLong(Checksum), length: 4))
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+//    func getint(_ byte:[UInt8] ,index:Int) -> Int {
+//
+//    }
+    
+    func getUint(_ byte:NSData ,index:Int) -> Int {
+        
 
+        let intData = byte.subdata(with: NSRange.init(location: index, length: 4)) as NSData
+        
+        var value:UInt32 = 0
+        intData.getBytes(&value, length: 4)
+        
+        let value21 = CFSwapInt32(value)
+        
+        
+//        NSData *intData = [data subdataWithRange:NSMakeRange(2, 4)];
+//        int value = CFSwapInt32BigToHost(*(int*)([intData bytes]));
+        
+//        let value = CFSwapInt32BigToHost(index)
+        
+        
+        return Int(value21)
+        
+    
+//        let cureent = readBuffer[index]
+//        readBuffer[index] = readBuffer[index + 3]
+//        readBuffer[index + 1] = readBuffer[index + 2]
+//        readBuffer[index + 2] = readBuffer[index + 1]
+//        readBuffer[index + 3] = cureent
+//        
+//        
+//        print(readBuffer)
+//        print(((byte[index + 3] << 3) | ((byte[index + 2] ) << 2) | ((byte[index + 1] ) << 1) | ((byte[index]))))
+//         return Int(UInt8((byte[index + 3] << 3) | ((byte[index + 2] ) << 2) | ((byte[index + 1] ) << 1) | ((byte[index]))))
+        
+        
+//        print(( | ((byte[index + 2] & 0xff) << 16) | ((byte[index + 1] & 0xff) << 8) | ((byte[index] & 0xff))))
+//        return Int.init((byte[index + 3] & 0xff << 4) | ((byte[index + 2] & 0xff) << 3) | ((byte[index + 1] & 0xff) << 2) | ((byte[index] & 0xff) << 1))
+    
+    }
 }
 

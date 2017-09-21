@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6823B8EB1F69118B002B3D77 /* 0x57449192.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6823B8EA1F69118B002B3D77 /* 0x57449192.bin */; };
+		6823B8EF1F691923002B3D77 /* TwoCup.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6823B8EE1F691923002B3D77 /* TwoCup.bin */; };
 		686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89CC1F6225FF00BD85D0 /* GYChat.swift */; };
+		686F89D91F62985700BD85D0 /* OznerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89D81F62985700BD85D0 /* OznerTools.swift */; };
+		686F89DB1F62BF0F00BD85D0 /* GYFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89DA1F62BF0F00BD85D0 /* GYFileManager.swift */; };
+		687778BC1F734B3300412D5B /* HelpToos.m in Sources */ = {isa = PBXBuildFile; fileRef = 687778BB1F734B3300412D5B /* HelpToos.m */; };
+		687778BF1F734BE400412D5B /* GYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 687778BE1F734BE300412D5B /* GYTools.m */; };
 		687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */; };
 		687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8BF1F61117600A8D6C1 /* ViewController.swift */; };
 		687DB8C31F61117600A8D6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687DB8C11F61117600A8D6C1 /* Main.storyboard */; };
@@ -35,7 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6823B8EA1F69118B002B3D77 /* 0x57449192.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = 0x57449192.bin; sourceTree = "<group>"; };
+		6823B8EE1F691923002B3D77 /* TwoCup.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = TwoCup.bin; sourceTree = "<group>"; };
 		686F89CC1F6225FF00BD85D0 /* GYChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYChat.swift; sourceTree = "<group>"; };
+		686F89D81F62985700BD85D0 /* OznerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OznerTools.swift; path = ../OznerTools.swift; sourceTree = "<group>"; };
+		686F89DA1F62BF0F00BD85D0 /* GYFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYFileManager.swift; sourceTree = "<group>"; };
+		687778B91F734B3200412D5B /* ATAnimatons-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATAnimatons-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		687778BA1F734B3300412D5B /* HelpToos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpToos.h; path = ../HelpToos.h; sourceTree = "<group>"; };
+		687778BB1F734B3300412D5B /* HelpToos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpToos.m; path = ../HelpToos.m; sourceTree = "<group>"; };
+		687778BD1F734BE300412D5B /* GYTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTools.h; sourceTree = "<group>"; };
+		687778BE1F734BE300412D5B /* GYTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTools.m; sourceTree = "<group>"; };
 		687DB8BA1F61117600A8D6C1 /* ATAnimatons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATAnimatons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		687DB8BF1F61117600A8D6C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +64,7 @@
 		687DB8D91F61117600A8D6C1 /* ATAnimatonsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATAnimatonsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAnimatonsUITests.swift; sourceTree = "<group>"; };
 		687DB8DF1F61117600A8D6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68BCF1C01F6BBF19002F3865 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +95,11 @@
 		686F89CB1F62255000BD85D0 /* GYChat */ = {
 			isa = PBXGroup;
 			children = (
+				6823B8EE1F691923002B3D77 /* TwoCup.bin */,
+				686F89D81F62985700BD85D0 /* OznerTools.swift */,
 				686F89CC1F6225FF00BD85D0 /* GYChat.swift */,
+				6823B8EA1F69118B002B3D77 /* 0x57449192.bin */,
+				68BCF1C01F6BBF19002F3865 /* MyPlayground.playground */,
 			);
 			name = GYChat;
 			path = GYLineView;
@@ -111,6 +131,12 @@
 				686F89CB1F62255000BD85D0 /* GYChat */,
 				687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */,
 				687DB8BF1F61117600A8D6C1 /* ViewController.swift */,
+				687778BD1F734BE300412D5B /* GYTools.h */,
+				687778BE1F734BE300412D5B /* GYTools.m */,
+				687778BA1F734B3300412D5B /* HelpToos.h */,
+				687778BB1F734B3300412D5B /* HelpToos.m */,
+				686F89DA1F62BF0F00BD85D0 /* GYFileManager.swift */,
+				687778B91F734B3200412D5B /* ATAnimatons-Bridging-Header.h */,
 				687DB8C11F61117600A8D6C1 /* Main.storyboard */,
 				687DB8C41F61117600A8D6C1 /* Assets.xcassets */,
 				687DB8C61F61117600A8D6C1 /* LaunchScreen.storyboard */,
@@ -206,6 +232,7 @@
 					687DB8B91F61117600A8D6C1 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = UZZG6NM74T;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					687DB8CD1F61117600A8D6C1 = {
@@ -249,6 +276,8 @@
 			files = (
 				687DB8C81F61117600A8D6C1 /* LaunchScreen.storyboard in Resources */,
 				687DB8C51F61117600A8D6C1 /* Assets.xcassets in Resources */,
+				6823B8EF1F691923002B3D77 /* TwoCup.bin in Resources */,
+				6823B8EB1F69118B002B3D77 /* 0x57449192.bin in Resources */,
 				687DB8C31F61117600A8D6C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686F89DB1F62BF0F00BD85D0 /* GYFileManager.swift in Sources */,
+				687778BC1F734B3300412D5B /* HelpToos.m in Sources */,
+				687778BF1F734BE400412D5B /* GYTools.m in Sources */,
 				687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */,
 				686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */,
+				686F89D91F62985700BD85D0 /* OznerTools.swift in Sources */,
 				687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,11 +463,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UZZG6NM74T;
 				INFOPLIST_FILE = ATAnimatons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Giant.ATAnimatons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ATAnimatons-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -443,11 +479,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UZZG6NM74T;
 				INFOPLIST_FILE = ATAnimatons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Giant.ATAnimatons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ATAnimatons-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
