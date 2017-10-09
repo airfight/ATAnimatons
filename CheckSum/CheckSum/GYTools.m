@@ -19,14 +19,6 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
 
 @implementation GYTools
 
-
-+(int)hexToint:(NSString*)str
-{
-    int nValude = 0;
-    sscanf([[str dataUsingEncoding:NSASCIIStringEncoding] bytes],"%x",&nValude);
-    return nValude;
-}
-
 + (void)bytesplit2byte:(Byte[])src orc:(Byte[])orc begin:(NSInteger)begin count:(NSInteger)count{
     memset(orc, 0, sizeof(char)*count);
     for (NSInteger i = begin; i < begin+count; i++){
@@ -40,6 +32,11 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
     
 //    NSFileManager *fileManager = [NSFileManager defaultManager];
     
+    NSFileManager *fm=[NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:path])
+    {
+    }
+    
     NSData *fileData = [[NSData alloc] initWithContentsOfFile:path];
 //    Byte *firmware = alloca(fileData.length);
 //    memset(firmware, 0, fileData.length);
@@ -48,6 +45,7 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
     
     NSInputStream *stream = [[NSInputStream alloc] initWithFileAtPath:path];
 
+    
     //绕过第一步 验证
     int Size = (int)fileData.length;
     
@@ -62,8 +60,8 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
     Byte* bytes = alloca(Size);
     
     @try {
-        memset(bytes, 0x00, Size);
-        memcpy(bytes, fileData.bytes, fileData.length);
+        memset(bytes, 0xff, Size);
+        memcpy(bytes, [fileData bytes], fileData.length);
         
         Boolean ver = false;
         
@@ -93,51 +91,6 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
                 break;
             }
         }
-        
-        int myLoc1 = 0;
-        int myLoc2 = 0;
-        
-        for (int i = 0; i < Size - 6; i++) {
-            if ((bytes[i] == 0x12) && (bytes[i + 1] == 0x34) && (bytes[i + 2] == 0x56)
-                && (bytes[i + 3] == 0x65) && (bytes[i + 4] == 0x43) && (bytes[i + 5] == 0x21)) {
-                if (myLoc1 == 0)
-                    myLoc1 = i;
-                else
-                    myLoc2 = i;
-            }
-        }
-        NSLog(@"%d---%d",myLoc1,myLoc2);
-         
-        
-        if (myLoc1!=0)
-        {
-//            bytes[myLoc1 + 5] = (Byte) [self hexToint:[@"123" substringWithRange:NSMakeRange(0, 2)]];
-//            bytes[myLoc1 + 4] = (Byte) [self hexToint:[self.mac substringWithRange:NSMakeRange(3, 2)]];
-//            bytes[myLoc1 + 3] = (Byte) [self hexToint:[self.mac substringWithRange:NSMakeRange(6, 2)]];
-//            bytes[myLoc1 + 2] = (Byte) [self hexToint:[self.mac substringWithRange:NSMakeRange(9, 2)]];
-//            bytes[myLoc1 + 1] = (Byte) [self hexToint:[self.mac substringWithRange:NSMakeRange(12, 2)]];
-//            bytes[myLoc1] = (Byte) [self hexToint:[self.mac substringWithRange:NSMakeRange(15, 2)]];
-        }
-        if (myLoc2 != 0) {
-            bytes[myLoc2 + 5] = bytes[myLoc1];
-            bytes[myLoc2 + 4] = bytes[myLoc1 + 1];
-            bytes[myLoc2 + 3] = bytes[myLoc1 + 2];
-            bytes[myLoc2 + 2] = bytes[myLoc1 + 3];
-            bytes[myLoc2 + 1] = bytes[myLoc1 + 4];
-            bytes[myLoc2] = bytes[myLoc1 + 5];
-        }
-
-        long temp = 0;
-        int checkSum= 0;
-        int len = Size / 4;
-        for (int i = 0; i < len; i++) {
-            temp += [self getBigHost:bytes index:i * 4];
-        }
-        long TempMask = 0x1FFFFFFFFL-0x100000000L;
-        checkSum = (int) (temp & TempMask);
-        NSLog(@"%d",(int)checkSum);
-        NSLog(@"%d",0xc0 & 0x0ff);
-        NSLog(@"%d",checkSum & 0x7fffffff);
         
     } @catch (NSException *exception) {
         NSLog(@"%@",exception);

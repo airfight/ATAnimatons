@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Helper.h"
+#import "GYTools.h"
 @interface ViewController ()
 
 @end
@@ -17,10 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"0x57449192" ofType:@"bin"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"(Ozner RO BLE)R02-Jul-21-2017-121059" ofType:@"bin"];
     
-    int sum = [Helper OTACheckSumWithFileStr:path];
-    NSLog(@"%d",sum);
+//    int sum = [Helper OTACheckSumWithFileStr:path];
+    
+//    NSLog(@"%d",sum);
+    
+    [GYTools loadFileWithpath:path];
     
     // Do any additional setup after loading the view, typically from a nib.
 }

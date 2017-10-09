@@ -21,6 +21,7 @@
 		687DB8C81F61117600A8D6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687DB8C61F61117600A8D6C1 /* LaunchScreen.storyboard */; };
 		687DB8D31F61117600A8D6C1 /* ATAnimatonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8D21F61117600A8D6C1 /* ATAnimatonsTests.swift */; };
 		687DB8DE1F61117600A8D6C1 /* ATAnimatonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */; };
+		6895DA2C1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		687DB8D91F61117600A8D6C1 /* ATAnimatonsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATAnimatonsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAnimatonsUITests.swift; sourceTree = "<group>"; };
 		687DB8DF1F61117600A8D6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "(Ozner RO BLE)R02-Jul-21-2017-121059.bin"; sourceTree = "<group>"; };
 		68BCF1C01F6BBF19002F3865 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 		686F89CB1F62255000BD85D0 /* GYChat */ = {
 			isa = PBXGroup;
 			children = (
+				6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */,
 				6823B8EE1F691923002B3D77 /* TwoCup.bin */,
 				686F89D81F62985700BD85D0 /* OznerTools.swift */,
 				686F89CC1F6225FF00BD85D0 /* GYChat.swift */,
@@ -278,6 +281,7 @@
 				687DB8C51F61117600A8D6C1 /* Assets.xcassets in Resources */,
 				6823B8EF1F691923002B3D77 /* TwoCup.bin in Resources */,
 				6823B8EB1F69118B002B3D77 /* 0x57449192.bin in Resources */,
+				6895DA2C1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */,
 				687DB8C31F61117600A8D6C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

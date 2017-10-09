@@ -13,6 +13,69 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        ROCommolOTA()
+        let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
+        
+        GYTools.loadFileWithpath(filePath!)
+        
+        
+        let data = NSData(contentsOfFile: filePath!)
+        
+        var size = (data?.length)!
+        
+        if size > 127 * 1024 {
+            print("文件过大")
+            return
+        }
+        
+        if (size % 256) != 0 {
+            size = (size/256) * 256 + 256
+        }
+        
+//        let inputStream = InputStream(fileAtPath: filePath!)
+//        
+//        //        let readBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: size)
+//        
+//        var readBuffer:[UInt8] = [UInt8].init(repeating: 0xff, count: size)
+//        
+//        memset(&readBuffer, 0xff, size)
+//        memcpy(&readBuffer, data?.bytes, (data?.length)!)
+//        //        inputStream?.read(&readBuffer, maxLength: (data?.length)!)
+//        let allData = NSData.init(bytes: readBuffer, length: readBuffer.count)
+//        //        Data.init(repeating: <#T##UInt8#>, count: <#T##Int#>)
+//        
+//        var temp:Int = 0
+//        var Checksum = 0
+//        let len = size/4 - 1
+                
+//        for i in 0...len {
+//            
+//            var value:UInt16 = 0
+//            //
+//            //            allData.getBytes(&value, range: NSRange.init(location: i * 4, length: 4))
+//            //            temp += Int.init(UInt32(bigEndian: value))
+//            //            temp += Int( CFSwapInt16BigToHost(value))
+//            //            getUint(readBuffer, index: i)
+//            
+//            //           temp +=  getUint(allData, index: i * 4)
+//            //            temp += Int(GYTools.big(toHostdata: allData as Data!, index: Int32(i * 4)))
+//            temp += Int(GYTools.getBigHost(&readBuffer, index: Int32(i * 4)))
+//            print(GYTools.getBigHost(&readBuffer, index: Int32(i * 4)))
+//        }
+//        print(temp)
+//        var tempMask = CLongLong(0x1FFFFFFFF);
+//        tempMask -= CLongLong(0x100000000)
+//        print(tempMask)
+//        
+//        Checksum = Int(CLongLong(temp) & tempMask)
+//        print(Checksum)
+//        inputStream?.close()// 1464111506 TwoCup//2146531471
+//        print(OznerTools.dataFromInt(number: CLongLong(Checksum), length: 4))
+        
+
+        /*
+        //水杯 已OK
         let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
         
         let data = NSData(contentsOfFile: filePath!)! as Data
@@ -42,29 +105,10 @@ class ViewController: UIViewController {
                 sendData.append(data.subData(starIndex: i * 16, count: (data.count%16 == 0 ? 16 : data.count%16)))
 
             }
-//            Thread.sleep(forTimeInterval: 0.1)
-            //固件包
-         
+
         }
         
         CheckSum(filePath!)
-        
-        
-        
-//        if data.count%16 > 0 {
-//            
-//            var sendData = Data.init(bytes: [0xC1])
-//            
-//            //固件包位置
-//            (data.count - data.count%16)/16
-//            //固件包大小
-//            sendData.append(Data.init(bytes: [UInt8(data.count%16)]))
-//            //固件包
-//            sendData.append(data.subData(starIndex: (data.count - data.count%16 - 1), count: data.count%16))
-//            
-//            
-//        }
-        
         
     }
     
@@ -115,6 +159,7 @@ class ViewController: UIViewController {
 //           temp +=  getUint(allData, index: i * 4)
 //            temp += Int(GYTools.big(toHostdata: allData as Data!, index: Int32(i * 4)))
            temp += Int(GYTools.getBigHost(&readBuffer, index: Int32(i * 4)))
+            print(GYTools.getBigHost(&readBuffer, index: Int32(i * 4)))
         }
         print(temp)
         var tempMask = CLongLong(0x1FFFFFFFF);
@@ -125,6 +170,11 @@ class ViewController: UIViewController {
         print(Checksum)
         inputStream?.close()// 1464111506 TwoCup//2146531471
         print(OznerTools.dataFromInt(number: CLongLong(Checksum), length: 4))
+ */
+        
+    }
+    
+    fileprivate func ROCommolOTA() {
         
     }
     

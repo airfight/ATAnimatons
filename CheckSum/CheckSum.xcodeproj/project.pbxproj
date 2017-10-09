@@ -18,6 +18,8 @@
 		685EDC2C1F67B05300227B4B /* CheckSumUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 685EDC2B1F67B05300227B4B /* CheckSumUITests.m */; };
 		685EDC3B1F67B06600227B4B /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 685EDC3A1F67B06600227B4B /* Helper.m */; };
 		685EDC3D1F67B14A00227B4B /* TwoCup.bin in Resources */ = {isa = PBXBuildFile; fileRef = 685EDC3C1F67B14A00227B4B /* TwoCup.bin */; };
+		6895DA2F1F7BA2CC0009BA50 /* GYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895DA2E1F7BA2CC0009BA50 /* GYTools.m */; };
+		6895DA311F7BA2D20009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6895DA301F7BA2D20009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		685EDC391F67B06600227B4B /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		685EDC3A1F67B06600227B4B /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		685EDC3C1F67B14A00227B4B /* TwoCup.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = TwoCup.bin; sourceTree = "<group>"; };
+		6895DA2D1F7BA2CC0009BA50 /* GYTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTools.h; sourceTree = "<group>"; };
+		6895DA2E1F7BA2CC0009BA50 /* GYTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTools.m; sourceTree = "<group>"; };
+		6895DA301F7BA2D20009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "(Ozner RO BLE)R02-Jul-21-2017-121059.bin"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,7 @@
 		685EDC051F67B05300227B4B /* CheckSum */ = {
 			isa = PBXGroup;
 			children = (
+				6895DA301F7BA2D20009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */,
 				685EDC3C1F67B14A00227B4B /* TwoCup.bin */,
 				6823B8EC1F691587002B3D77 /* 0x57449192.bin */,
 				685EDC391F67B06600227B4B /* Helper.h */,
@@ -116,6 +122,8 @@
 				685EDC0A1F67B05300227B4B /* AppDelegate.m */,
 				685EDC0C1F67B05300227B4B /* ViewController.h */,
 				685EDC0D1F67B05300227B4B /* ViewController.m */,
+				6895DA2D1F7BA2CC0009BA50 /* GYTools.h */,
+				6895DA2E1F7BA2CC0009BA50 /* GYTools.m */,
 				685EDC0F1F67B05300227B4B /* Main.storyboard */,
 				685EDC121F67B05300227B4B /* Assets.xcassets */,
 				685EDC141F67B05300227B4B /* LaunchScreen.storyboard */,
@@ -264,6 +272,7 @@
 				685EDC131F67B05300227B4B /* Assets.xcassets in Resources */,
 				685EDC111F67B05300227B4B /* Main.storyboard in Resources */,
 				685EDC3D1F67B14A00227B4B /* TwoCup.bin in Resources */,
+				6895DA311F7BA2D20009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */,
 				6823B8ED1F691587002B3D77 /* 0x57449192.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				685EDC0E1F67B05300227B4B /* ViewController.m in Sources */,
+				6895DA2F1F7BA2CC0009BA50 /* GYTools.m in Sources */,
 				685EDC0B1F67B05300227B4B /* AppDelegate.m in Sources */,
 				685EDC081F67B05300227B4B /* main.m in Sources */,
 				685EDC3B1F67B06600227B4B /* Helper.m in Sources */,
