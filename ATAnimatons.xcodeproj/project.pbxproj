@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6823B8EB1F69118B002B3D77 /* 0x57449192.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6823B8EA1F69118B002B3D77 /* 0x57449192.bin */; };
 		6823B8EF1F691923002B3D77 /* TwoCup.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6823B8EE1F691923002B3D77 /* TwoCup.bin */; };
+		685698A51F8B11FF0005CD31 /* GYWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685698A41F8B11FF0005CD31 /* GYWaveView.swift */; };
 		686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89CC1F6225FF00BD85D0 /* GYChat.swift */; };
 		686F89D91F62985700BD85D0 /* OznerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89D81F62985700BD85D0 /* OznerTools.swift */; };
 		686F89DB1F62BF0F00BD85D0 /* GYFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686F89DA1F62BF0F00BD85D0 /* GYFileManager.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		6823B8EA1F69118B002B3D77 /* 0x57449192.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = 0x57449192.bin; sourceTree = "<group>"; };
 		6823B8EE1F691923002B3D77 /* TwoCup.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = TwoCup.bin; sourceTree = "<group>"; };
+		685698A41F8B11FF0005CD31 /* GYWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYWaveView.swift; sourceTree = "<group>"; };
 		686F89CC1F6225FF00BD85D0 /* GYChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYChat.swift; sourceTree = "<group>"; };
 		686F89D81F62985700BD85D0 /* OznerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OznerTools.swift; path = ../OznerTools.swift; sourceTree = "<group>"; };
 		686F89DA1F62BF0F00BD85D0 /* GYFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYFileManager.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6856989F1F8B112A0005CD31 /* GYWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				685698A41F8B11FF0005CD31 /* GYWaveView.swift */,
+			);
+			path = GYWaveView;
+			sourceTree = "<group>";
+		};
 		686F89CB1F62255000BD85D0 /* GYChat */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 		687DB8BC1F61117600A8D6C1 /* ATAnimatons */ = {
 			isa = PBXGroup;
 			children = (
+				6856989F1F8B112A0005CD31 /* GYWaveView */,
 				686F89CB1F62255000BD85D0 /* GYChat */,
 				687DB8BD1F61117600A8D6C1 /* AppDelegate.swift */,
 				687DB8BF1F61117600A8D6C1 /* ViewController.swift */,
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				686F89DB1F62BF0F00BD85D0 /* GYFileManager.swift in Sources */,
+				685698A51F8B11FF0005CD31 /* GYWaveView.swift in Sources */,
 				687778BC1F734B3300412D5B /* HelpToos.m in Sources */,
 				687778BF1F734BE400412D5B /* GYTools.m in Sources */,
 				687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */,

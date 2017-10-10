@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let struct1 = GYWaveViewConfing(amplitude: 4, cycle: 1, distanceH: 1, distanceV: 1, waveScale: 1, progress: 1, colors: [UIColor.red,UIColor.blue,UIColor.brown], waveType: GYWaveViewType.OvalInRect)
+        
+        let view1 = GYWaveView(frame: CGRect.init(x: 20, y: 200, width: 200, height: 200), config: struct1)
+        view1.isWaveStart = true
+        view.addSubview(view1)
         
         ROCommolOTA()
         let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
