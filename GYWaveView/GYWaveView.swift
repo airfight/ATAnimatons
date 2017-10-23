@@ -76,7 +76,6 @@ class GYWaveView: UIView {
         path.addClip()
         
         
-        
     }
      
     required init?(coder aDecoder: NSCoder) {
