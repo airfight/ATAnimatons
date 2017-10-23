@@ -17,21 +17,21 @@ class ViewController: UIViewController {
         ROCommolOTA()
         let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
         
-        GYTools.loadFileWithpath(filePath!)
+//        GYTools.loadFileWithpath(filePath!)
         
         
-        let data = NSData(contentsOfFile: filePath!)
-        
-        var size = (data?.length)!
-        
-        if size > 127 * 1024 {
-            print("文件过大")
-            return
-        }
-        
-        if (size % 256) != 0 {
-            size = (size/256) * 256 + 256
-        }
+//        let data = NSData(contentsOfFile: filePath!)
+//
+//        var size = (data?.length)!
+//
+//        if size > 127 * 1024 {
+//            print("文件过大")
+//            return
+//        }
+//
+//        if (size % 256) != 0 {
+//            size = (size/256) * 256 + 256
+//        }
         
 //        let inputStream = InputStream(fileAtPath: filePath!)
 //        
@@ -74,9 +74,9 @@ class ViewController: UIViewController {
 //        print(OznerTools.dataFromInt(number: CLongLong(Checksum), length: 4))
         
 
-        /*
+        
         //水杯 已OK
-        let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
+//        let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
         
         let data = NSData(contentsOfFile: filePath!)! as Data
         print(Int((data.count)/16))
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         
         for i in 0...len {
                         
-            var value:UInt16 = 0
+//            var value:UInt16 = 0
 //
 //            allData.getBytes(&value, range: NSRange.init(location: i * 4, length: 4))
 //            temp += Int.init(UInt32(bigEndian: value))
@@ -167,10 +167,10 @@ class ViewController: UIViewController {
         print(tempMask)
         
         Checksum = Int(CLongLong(temp) & tempMask)
-        print(Checksum)
+        print(Checksum & 0x7fffffff)
         inputStream?.close()// 1464111506 TwoCup//2146531471
         print(OznerTools.dataFromInt(number: CLongLong(Checksum), length: 4))
- */
+ 
         
     }
     
