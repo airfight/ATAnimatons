@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        GYWaveView(frame: self.view.frame)
+        /*
         ROCommolOTA()
         let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
         
@@ -109,6 +110,7 @@ class ViewController: UIViewController {
         }
         
         CheckSum(filePath!)
+ */
         
     }
     
