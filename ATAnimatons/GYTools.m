@@ -108,7 +108,6 @@ static Byte findKey[]={0x23, 0x23, 0x24, 0x24, 0x40, 0x40, 0x2a, 0x2a, 0x54, 0x6
         }
         NSLog(@"%d---%d",myLoc1,myLoc2);
          
-        
         if (myLoc1!=0)
         {
 //            bytes[myLoc1 + 5] = (Byte) [self hexToint:[@"123" substringWithRange:NSMakeRange(0, 2)]];
