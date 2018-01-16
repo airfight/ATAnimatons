@@ -23,6 +23,8 @@
 		687DB8DE1F61117600A8D6C1 /* ATAnimatonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */; };
 		6895DA2C1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */; };
 		68AD528E1F9DC85E005EAF0C /* GYWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */; };
+		68C40DE4200D9A6500BA1E52 /* InstrumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C40DE3200D9A6500BA1E52 /* InstrumentView.swift */; };
+		68C40DE7200DC75800BA1E52 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C40DE6200DC75800BA1E52 /* CircularProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYWaveView.swift; sourceTree = "<group>"; };
 		68AD52901F9DE69B005EAF0C /* ble.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ble.bin; sourceTree = "<group>"; };
 		68BCF1C01F6BBF19002F3865 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		68C40DE3200D9A6500BA1E52 /* InstrumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentView.swift; sourceTree = "<group>"; };
+		68C40DE5200DC75800BA1E52 /* CircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularProgressView.h; sourceTree = "<group>"; };
+		68C40DE6200DC75800BA1E52 /* CircularProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +178,10 @@
 		68AD528C1F9DC84F005EAF0C /* GYWaveView */ = {
 			isa = PBXGroup;
 			children = (
+				68C40DE5200DC75800BA1E52 /* CircularProgressView.h */,
+				68C40DE6200DC75800BA1E52 /* CircularProgressView.m */,
 				68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */,
+				68C40DE3200D9A6500BA1E52 /* InstrumentView.swift */,
 			);
 			path = GYWaveView;
 			sourceTree = SOURCE_ROOT;
@@ -323,7 +331,9 @@
 				68AD528E1F9DC85E005EAF0C /* GYWaveView.swift in Sources */,
 				687778BC1F734B3300412D5B /* HelpToos.m in Sources */,
 				687778BF1F734BE400412D5B /* GYTools.m in Sources */,
+				68C40DE7200DC75800BA1E52 /* CircularProgressView.m in Sources */,
 				687DB8C01F61117600A8D6C1 /* ViewController.swift in Sources */,
+				68C40DE4200D9A6500BA1E52 /* InstrumentView.swift in Sources */,
 				686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */,
 				686F89D91F62985700BD85D0 /* OznerTools.swift in Sources */,
 				687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */,

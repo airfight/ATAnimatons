@@ -13,12 +13,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let gyView = GYWaveView(frame: self.view.frame)
-        gyView.waveColors = [UIColor.red,UIColor.blue,UIColor.brown]
+        let view1 = InstrumentView(frame: CGRect(x: 50, y: 50, width: 280, height: 280))
         
-        view.addSubview(gyView)
-         let filePath = Bundle.main.path(forResource: "ble", ofType: "bin")
-        GYTools.loadFileWithpath(filePath!)
+        view.addSubview(view1)
+        
+//        let gyView = GYWaveView(frame: self.view.frame)
+//        gyView.waveColors = [UIColor.red,UIColor.blue,UIColor.brown]
+        
+//        view.addSubview(gyView)
+//         let filePath = Bundle.main.path(forResource: "ble", ofType: "bin")
+//        GYTools.loadFileWithpath(filePath!)
         
         /*
         ROCommolOTA()
