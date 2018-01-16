@@ -18,10 +18,10 @@ import UIKit
 class GYWaveView: UIView {
     
     var waveColors:[UIColor] = []
-    var bgColor:UIColor = UIColor.clear
+    var bgColor:UIColor = UIColor.red
     lazy var waveDisplaylink = CADisplayLink()
-    lazy var waveLayer = CAShapeLayer()
-    
+//    lazy var waveLayer = CAShapeLayer()
+
     /// 基础描述 正弦函数
     ///   y=Asin(ωx+φ）+ b
     ///   A : wavaA
@@ -69,12 +69,51 @@ class GYWaveView: UIView {
         super.draw(rect)
         
         /// 背景颜色 绘制
-        let path = UIBezierPath()
-        
+        let path = UIBezierPath.init(rect: bounds)
+
         bgColor.setFill()
         path.fill()
         path.addClip()
         
+        if waveColors.count <= 0 {
+            return
+        }
+        
+        (waveColors as NSArray).enumerateObjects { (color, index:Int, _) in
+            
+            let colorW:UIColor = color as! UIColor
+            
+            createUI(colorW, index: index)
+            
+        }
+        
+        
+    }
+    
+    fileprivate func createUI(_ color:UIColor,index:Int) {
+        
+        let wavelayer = CAShapeLayer()
+        wavelayer.fillColor = color.cgColor
+        layer.addSublayer(wavelayer)
+        
+        let path = CGMutablePath()
+        var Y = bounds.width / 2
+        path.move(to: CGPoint(x: 0, y: Y))
+        for i in 0...Int(bounds.width) {
+            Y = waveA * sin(waveW * CGFloat(i) + offsetX) + b
+            path.addLine(to: CGPoint(x: CGFloat(i), y: Y))
+        }
+        
+        path.addLine(to: CGPoint(x: bounds.size.width, y: bounds.size.height))
+        path.addLine(to: CGPoint(x: 0, y: bounds.size.height))
+        path.closeSubpath()
+        wavelayer.path = path
+        
+    }
+    
+    deinit {
+        
+        waveDisplaylink.invalidate()
         
     }
      

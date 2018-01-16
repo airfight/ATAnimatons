@@ -13,12 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GYWaveView(frame: self.view.frame)
+        let gyView = GYWaveView(frame: self.view.frame)
+        gyView.waveColors = [UIColor.red,UIColor.blue,UIColor.brown]
+        
+        view.addSubview(gyView)
+         let filePath = Bundle.main.path(forResource: "ble", ofType: "bin")
+        GYTools.loadFileWithpath(filePath!)
+        
         /*
         ROCommolOTA()
         let filePath = Bundle.main.path(forResource: "TwoCup", ofType: "bin")
         
-//        GYTools.loadFileWithpath(filePath!)
+        GYTools.loadFileWithpath(filePath!)
         
         
 //        let data = NSData(contentsOfFile: filePath!)
