@@ -25,7 +25,7 @@ class InstrumentView: UIView {
     private var radius:CGFloat = 0.0
     private var widthA:CGFloat = 0.0
     private var heightA:CGFloat = 0.0
-    private var sumAngle = CGFloat.pi * 0.75
+    private var sumAngle = CGFloat.pi * 1.5
     override init(frame: CGRect) {
         super.init(frame: frame)
         //        drawLayer()        radius = self.frame.width/2 - 20
@@ -107,58 +107,58 @@ class InstrumentView: UIView {
         
         
         let context = UIGraphicsGetCurrentContext() //获取上下文
-//        context?.setAllowsAntialiasing(true);
-//        context?.translateBy(x: widthA, y: heightA)
-       
-//        let colours:CFArray = [UIColor.red.cgColor, UIColor.blue.cgColor] as CFArray
-        context?.saveGState()
         context?.translateBy(x: self.bounds.midX, y: self.bounds.midY)
+        context?.saveGState()
 
-        let sumNum = Int(sumAngle / (CGFloat.pi * 0.1))
-        print(centerPoint)
-        print(radius)
-        print(Thread.current)
+        let sumNum = Int(sumAngle / (CGFloat.pi * 0.05))
 
         for i in 0...sumNum {
             if i == 0 {
-                
-                context?.rotate(by: (CGFloat.pi * 0.5))
-                
+                context?.rotate(by: (CGFloat.pi * 45 / 180))
             } else {
                 context?.rotate(by: (CGFloat.pi * 0.05))
-                
             }
-
 
             if i%2 == 1 {
-                
-                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.5),CGPoint(x: 0, y: radius * 0.8 )])
+                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 15 )])
                 context?.setStrokeColor(UIColor.red.cgColor)
-//                context?.setFi/llColor(UIColor.red.cgColor)
+                context?.saveGState()
+                
             } else {
-
-                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.5),CGPoint(x: 0, y: radius )])
+                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 25 )])
                 context?.setStrokeColor(UIColor.white.cgColor)
-//                context?.setFillColor(UIColor.white.cgColor)
+                context?.saveGState()
+
             }
-            
-            
 
-            print(Thread.current)
         }
-        
 
-//        context?.addArc(center: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
-//        context?.setLineDash(phase: 2, lengths: [4,10])
         context?.setLineWidth(4)
-        
-//        context?.setLineDash(phase: 2, lengths: [4,10])
-
         context?.setLineCap(CGLineCap.butt)
         context?.strokePath()
         context?.restoreGState()
 
-        
+
+//        let path = UIBezierPath(arcCenter:CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.width/2 - 20, startAngle: startAngle , endAngle: endAngle , clockwise: true)
+//
+//        colorsLayer = CAGradientLayer()
+//        colorsLayer?.shadowPath = path.cgPath
+//        colorsLayer?.locations = [0,0.5,1]
+//
+//        colorsLayer?.frame = self.bounds
+//        colorsLayer?.startPoint = CGPoint(x: 0, y: 0.5)
+//        colorsLayer?.endPoint = CGPoint(x: 1, y: 0)
+//        colorsLayer?.colors = [
+//            UIColor(displayP3Red: 9.0/255, green: 142.0/255, blue: 254.0/255, alpha: 1.0).cgColor,
+//            UIColor(displayP3Red: 134.0/255, green: 102.0/255, blue: 255.0/255, alpha: 1.0).cgColor,
+//            UIColor(displayP3Red: 215.0/255, green: 67.0/255, blue: 113.0/255, alpha: 1.0).cgColor
+//        ]
+//        let shal = CAShapeLayer()
+//        shal.path = path.cgPath
+//        shal.fillColor = UIColor.white.cgColor
+//        colorsLayer?.mask = shal
+//        self.layer.addSublayer(colorsLayer!)
+
         /* UIBezierPath + Layer实现
         
         let bPath = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.width / 2 - 20, startAngle: startAngle, endAngle: endAngle, clockwise: true)
