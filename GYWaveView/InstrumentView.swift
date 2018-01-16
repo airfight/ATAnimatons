@@ -106,40 +106,58 @@ class InstrumentView: UIView {
 //        bPath.stroke()
         
         
-        
         let context = UIGraphicsGetCurrentContext() //获取上下文
 //        context?.setAllowsAntialiasing(true);
 //        context?.translateBy(x: widthA, y: heightA)
        
 //        let colours:CFArray = [UIColor.red.cgColor, UIColor.blue.cgColor] as CFArray
         context?.saveGState()
-//        context?.rotate(by: startAngle - 90)
+        context?.translateBy(x: self.bounds.midX, y: self.bounds.midY)
+
         let sumNum = Int(sumAngle / (CGFloat.pi * 0.1))
         print(centerPoint)
         print(radius)
+        print(Thread.current)
+
         for i in 0...sumNum {
+            if i == 0 {
+                
+                context?.rotate(by: (CGFloat.pi * 0.5))
+                
+            } else {
+                context?.rotate(by: (CGFloat.pi * 0.05))
+                
+            }
+
+
             if i%2 == 1 {
                 
-                context?.addLines(between: [CGPoint(x: centerPoint.x, y: radius * 1.2),CGPoint(x: centerPoint.x, y: radius * 1.6)])
-
+                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.5),CGPoint(x: 0, y: radius * 0.8 )])
+                context?.setStrokeColor(UIColor.red.cgColor)
+//                context?.setFi/llColor(UIColor.red.cgColor)
             } else {
 
-                context?.addLines(between: [CGPoint(x: centerPoint.x, y: radius * 1.2),CGPoint(x: centerPoint.x, y: radius * 1.8)])
+                context?.addLines(between: [CGPoint(x: 0, y: radius * 0.5),CGPoint(x: 0, y: radius )])
+                context?.setStrokeColor(UIColor.white.cgColor)
+//                context?.setFillColor(UIColor.white.cgColor)
             }
-            context?.rotate(by: (CGFloat.pi * 0.1))
+            
+            
+
+            print(Thread.current)
         }
-//        context?.restoreGState()
+        
 
 //        context?.addArc(center: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
 //        context?.setLineDash(phase: 2, lengths: [4,10])
         context?.setLineWidth(4)
-        context?.setStrokeColor(UIColor.red.cgColor)
+        
 //        context?.setLineDash(phase: 2, lengths: [4,10])
 
         context?.setLineCap(CGLineCap.butt)
         context?.strokePath()
-        
- 
+        context?.restoreGState()
+
         
         /* UIBezierPath + Layer实现
         
