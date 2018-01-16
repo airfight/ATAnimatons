@@ -122,12 +122,10 @@ class InstrumentView: UIView {
             if i%2 == 1 {
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 15 )])
                 context?.setStrokeColor(UIColor.red.cgColor)
-                context?.saveGState()
                 
             } else {
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 25 )])
                 context?.setStrokeColor(UIColor.white.cgColor)
-                context?.saveGState()
 
             }
 
