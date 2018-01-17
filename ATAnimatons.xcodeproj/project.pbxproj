@@ -22,6 +22,8 @@
 		687DB8D31F61117600A8D6C1 /* ATAnimatonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8D21F61117600A8D6C1 /* ATAnimatonsTests.swift */; };
 		687DB8DE1F61117600A8D6C1 /* ATAnimatonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */; };
 		6895DA2C1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */; };
+		689C920F200EE3E100DD90A3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689C920E200EE3E100DD90A3 /* Colors.swift */; };
+		689C9211200EE45400DD90A3 /* UIColor+Expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689C9210200EE45400DD90A3 /* UIColor+Expand.swift */; };
 		68AD528E1F9DC85E005EAF0C /* GYWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */; };
 		68C40DE4200D9A6500BA1E52 /* InstrumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C40DE3200D9A6500BA1E52 /* InstrumentView.swift */; };
 		68C40DE7200DC75800BA1E52 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C40DE6200DC75800BA1E52 /* CircularProgressView.m */; };
@@ -69,6 +71,8 @@
 		687DB8DD1F61117600A8D6C1 /* ATAnimatonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAnimatonsUITests.swift; sourceTree = "<group>"; };
 		687DB8DF1F61117600A8D6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6895DA2B1F7B95A50009BA50 /* (Ozner RO BLE)R02-Jul-21-2017-121059.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "(Ozner RO BLE)R02-Jul-21-2017-121059.bin"; sourceTree = "<group>"; };
+		689C920E200EE3E100DD90A3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		689C9210200EE45400DD90A3 /* UIColor+Expand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Expand.swift"; sourceTree = "<group>"; };
 		68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYWaveView.swift; sourceTree = "<group>"; };
 		68AD52901F9DE69B005EAF0C /* ble.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ble.bin; sourceTree = "<group>"; };
 		68BCF1C01F6BBF19002F3865 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				68C40DE6200DC75800BA1E52 /* CircularProgressView.m */,
 				68AD528D1F9DC85E005EAF0C /* GYWaveView.swift */,
 				68C40DE3200D9A6500BA1E52 /* InstrumentView.swift */,
+				689C9210200EE45400DD90A3 /* UIColor+Expand.swift */,
+				689C920E200EE3E100DD90A3 /* Colors.swift */,
 			);
 			path = GYWaveView;
 			sourceTree = SOURCE_ROOT;
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				686F89DB1F62BF0F00BD85D0 /* GYFileManager.swift in Sources */,
+				689C920F200EE3E100DD90A3 /* Colors.swift in Sources */,
 				68AD528E1F9DC85E005EAF0C /* GYWaveView.swift in Sources */,
 				687778BC1F734B3300412D5B /* HelpToos.m in Sources */,
 				687778BF1F734BE400412D5B /* GYTools.m in Sources */,
@@ -337,6 +344,7 @@
 				686F89CD1F6225FF00BD85D0 /* GYChat.swift in Sources */,
 				686F89D91F62985700BD85D0 /* OznerTools.swift in Sources */,
 				687DB8BE1F61117600A8D6C1 /* AppDelegate.swift in Sources */,
+				689C9211200EE45400DD90A3 /* UIColor+Expand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

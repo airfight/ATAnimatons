@@ -34,7 +34,8 @@ class InstrumentView: UIView {
 
         widthA = self.frame.width / 2
         heightA = self.frame.width / 2
-        self.backgroundColor = UIColor.blue
+
+        self.backgroundColor = UIColor.black
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,6 +49,27 @@ class InstrumentView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         drawLayer()
+        drawPointer()
+
+    }
+    
+    fileprivate func drawPointer() {
+        
+//        let path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: radius * 0.6, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
+//        UIColor.white.setFill()
+//        path.fill()
+//        path.close()
+        
+//        let context = UIGraphicsGetCurrentContext() //获取上下文
+//        context?.saveGState()
+//        context?.setAllowsAntialiasing(true)
+//        context?.addArc(center: CGPoint(x: 0, y: 0), radius: radius * 0.6, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+//        context?.drawPath(using: CGPathDrawingMode.fill)
+//        context?.setLineWidth(4)
+//        context?.setStrokeColor(UIColor.white.cgColor)
+//        context?.strokePath()
+//        context?.restoreGState()
+        
     }
     
     fileprivate func drawLayer() {
@@ -107,22 +129,23 @@ class InstrumentView: UIView {
         
         
         let context = UIGraphicsGetCurrentContext() //获取上下文
+        
         context?.translateBy(x: self.bounds.midX, y: self.bounds.midY)
-//        context?.saveGState()
 
-        let sumNum = Int(sumAngle / (CGFloat.pi * 0.05))
-
+        let sumNum = Int(sumAngle / (CGFloat.pi * 0.03))
+        let colors = Colors.getMuatbleColors()
+        
         for i in 0...sumNum {
             if i == 0 {
                 context?.rotate(by: (CGFloat.pi * 45 / 180))
             } else {
-                context?.rotate(by: (CGFloat.pi * 0.05))
+                context?.rotate(by: (CGFloat.pi * 0.03))
             }
-
+            
             if i%2 == 1 {
                 context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 15 )])
-                context?.setStrokeColor(UIColor.red.cgColor)
+                context?.setStrokeColor(colors[sumNum - i].cgColor)
                 context?.setLineWidth(4)
                 context?.setLineCap(CGLineCap.butt)
                 context?.strokePath()
@@ -131,7 +154,7 @@ class InstrumentView: UIView {
             } else {
                 context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 25 )])
-                context?.setStrokeColor(UIColor.white.cgColor)
+                context?.setStrokeColor(colors[sumNum - i].cgColor)
                 context?.setLineWidth(4)
                 context?.setLineCap(CGLineCap.butt)
                 context?.strokePath()
@@ -139,6 +162,31 @@ class InstrumentView: UIView {
             }
 
         }
+        
+        context?.translateBy(x: 0, y: 0)
+//        context?.saveGState()
+        let path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: radius * 0.6, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
+        
+        context?.addPath(path.cgPath)
+        path.addLine(to: CGPoint(x: -radius * 0.4, y: radius * 0.2))
+        path.addLine(to: CGPoint(x: -radius * 0.7, y: radius * 0.7))
+        context?.rotate(by: 0.3)
+        
+        context?.setStrokeColor(UIColor.white.cgColor)
+        context?.setFillColor(UIColor.white.cgColor)
+        path.fill()
+        context?.strokePath()
+//        context?.restoreGState()
+ 
+//        let context1 = UIGraphicsGetCurrentContext() //获取上下文
+//        context?.saveGState()
+//        context?.setAllowsAntialiasing(true)
+//        context?.addArc(center: centerPoint, radius: radius * 0.6, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+//        context?.drawPath(using: CGPathDrawingMode.fill)
+//        context?.setLineWidth(4)
+//        context?.setStrokeColor(UIColor.white.cgColor)
+//        context?.strokePath()
+//        context?.restoreGState()
         
        /*
         context?.clip()
