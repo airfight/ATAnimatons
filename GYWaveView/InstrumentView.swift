@@ -108,7 +108,7 @@ class InstrumentView: UIView {
         
         let context = UIGraphicsGetCurrentContext() //获取上下文
         context?.translateBy(x: self.bounds.midX, y: self.bounds.midY)
-        context?.saveGState()
+//        context?.saveGState()
 
         let sumNum = Int(sumAngle / (CGFloat.pi * 0.05))
 
@@ -120,21 +120,44 @@ class InstrumentView: UIView {
             }
 
             if i%2 == 1 {
+                context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 15 )])
                 context?.setStrokeColor(UIColor.red.cgColor)
+                context?.setLineWidth(4)
+                context?.setLineCap(CGLineCap.butt)
+                context?.strokePath()
+                context?.restoreGState()
                 
             } else {
+                context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 25 )])
                 context?.setStrokeColor(UIColor.white.cgColor)
-
+                context?.setLineWidth(4)
+                context?.setLineCap(CGLineCap.butt)
+                context?.strokePath()
+                context?.restoreGState()
             }
 
         }
+        
+       /*
+        context?.clip()
+        let rgb = CGColorSpaceCreateDeviceRGB()
+        let colors:[CGFloat] = [204.0 / 255.0, 224.0 / 255.0, 244.0 / 255.0, 1.00,
+                                29.0 / 255.0, 156.0 / 255.0, 215.0 / 255.0, 1.00,
+                                0.0 / 255.0,  50.0 / 255.0, 126.0 / 255.0, 1.00]
+        
+        
+        let gradient = CGGradient(colorSpace: rgb, colorComponents: colors, locations: [0,0.3,0.5,0.8,1.0], count: 4)
+        
+        context?.drawLinearGradient(gradient!, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: 1), options: CGGradientDrawingOptions.drawsBeforeStartLocation)
+        
+        */
 
-        context?.setLineWidth(4)
-        context?.setLineCap(CGLineCap.butt)
-        context?.strokePath()
-        context?.restoreGState()
+//        context?.setLineWidth(4)
+//        context?.setLineCap(CGLineCap.butt)
+//        context?.strokePath()
+//        context?.restoreGState()
 
 
 //        let path = UIBezierPath(arcCenter:CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.width/2 - 20, startAngle: startAngle , endAngle: endAngle , clockwise: true)
