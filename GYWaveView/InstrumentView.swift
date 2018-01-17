@@ -168,9 +168,9 @@ class InstrumentView: UIView {
         let path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: radius * 0.6, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
         
         context?.addPath(path.cgPath)
-        path.addLine(to: CGPoint(x: -radius * 0.4, y: radius * 0.2))
-        path.addLine(to: CGPoint(x: -radius * 0.7, y: radius * 0.7))
-        context?.rotate(by: 0.3)
+        path.addLine(to: CGPoint(x: -radius * 0.3, y: radius * 0.2))
+        path.addLine(to: CGPoint(x: -radius * 0.55, y: radius * 0.55))
+        context?.rotate(by: (CGFloat.pi * 45 / 180))
         
         context?.setStrokeColor(UIColor.white.cgColor)
         context?.setFillColor(UIColor.white.cgColor)
