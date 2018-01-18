@@ -21,7 +21,6 @@ class InstrumentView: UIView {
     private var colorsLayer:CAGradientLayer?
     private var startAngle = CGFloat.pi * 0.75
     private var endAngle = CGFloat.pi * 2.25
-    internal var centerPoint: CGPoint = CGPoint(x: 0, y: 0)
     private var radius:CGFloat = 0.0
     private var widthA:CGFloat = 0.0
     private var heightA:CGFloat = 0.0
@@ -29,15 +28,10 @@ class InstrumentView: UIView {
     var progress:CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //        drawLayer()        radius = self.frame.width/2 - 20
-        radius = self.frame.width/2
-        centerPoint = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-
-        widthA = self.frame.width / 2
-        heightA = self.frame.width / 2
-
-        self.backgroundColor = UIColor.black
+        initData()
+       
     }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -45,6 +39,7 @@ class InstrumentView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        initData()
     }
     
     override func draw(_ rect: CGRect) {
@@ -53,10 +48,12 @@ class InstrumentView: UIView {
 
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-     
-       setTemperature(100)
+    private func initData() {
+        
+        self.backgroundColor = UIColor.clear
+        radius = self.frame.width/2
+        widthA = self.frame.width / 2
+        heightA = self.frame.width / 2
         
     }
     
