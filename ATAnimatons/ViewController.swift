@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let view1 = InstrumentView(frame: CGRect(x: 50, y: 50, width: 280, height: 280))
+        let gySlider = GYSlider(frame: CGRect(x: 20, y: 20, width: 200, height: 80))
         
-        view.addSubview(view1)
+        view.addSubview(gySlider)
+//        let view1 = InstrumentView(frame: CGRect(x: 50, y: 50, width: 280, height: 280))
+//
+//        view.addSubview(view1)
         
 //        let gyView = GYWaveView(frame: self.view.frame)
 //        gyView.waveColors = [UIColor.red,UIColor.blue,UIColor.brown]

@@ -129,8 +129,6 @@ class InstrumentView: UIView {
         ("当前温度" as NSString).draw(at: CGPoint(x: -60, y:10), withAttributes: [NSAttributedStringKey.font:  UIFont.systemFont(ofSize: 30), NSAttributedStringKey.foregroundColor: UIColor.blue])
         
         context?.restoreGState()
- 
-
     }
     
     
