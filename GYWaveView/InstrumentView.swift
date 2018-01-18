@@ -26,6 +26,7 @@ class InstrumentView: UIView {
     private var widthA:CGFloat = 0.0
     private var heightA:CGFloat = 0.0
     private var sumAngle = CGFloat.pi * 1.5
+    var progress:CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
         //        drawLayer()        radius = self.frame.width/2 - 20
@@ -69,6 +70,15 @@ class InstrumentView: UIView {
 //        context?.setStrokeColor(UIColor.white.cgColor)
 //        context?.strokePath()
 //        context?.restoreGState()
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+     
+        let sumNum = CGFloat(sumAngle / (CGFloat.pi * 0.03))
+        progress = progress + sumNum/100.0
+        setNeedsDisplay()
         
     }
     
@@ -146,8 +156,8 @@ class InstrumentView: UIView {
                 context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 15 )])
                 context?.setStrokeColor(colors[sumNum - i].cgColor)
-                context?.setLineWidth(4)
-                context?.setLineCap(CGLineCap.butt)
+                context?.setLineWidth(3)
+                context?.setLineCap(CGLineCap.round)
                 context?.strokePath()
                 context?.restoreGState()
                 
@@ -155,8 +165,8 @@ class InstrumentView: UIView {
                 context?.saveGState()
                 context?.addLines(between: [CGPoint(x: 0, y: radius * 0.75),CGPoint(x: 0, y: radius * 0.75 + 25 )])
                 context?.setStrokeColor(colors[sumNum - i].cgColor)
-                context?.setLineWidth(4)
-                context?.setLineCap(CGLineCap.butt)
+                context?.setLineWidth(3)
+                context?.setLineCap(CGLineCap.round)
                 context?.strokePath()
                 context?.restoreGState()
             }
@@ -172,7 +182,7 @@ class InstrumentView: UIView {
         path.addLine(to: CGPoint(x: -radius * 0.5, y: radius * 0.5))
         path.addLine(to: CGPoint(x: -radius * 0.5, y: radius * 0.2))
 
-        context?.rotate(by: (CGFloat.pi * 100 / 180))
+        context?.rotate(by: (CGFloat.pi * 45 / 180) + (CGFloat.pi * 0.03) * progress)
         
         context?.setStrokeColor(UIColor.white.cgColor)
         context?.setFillColor(UIColor.white.cgColor)

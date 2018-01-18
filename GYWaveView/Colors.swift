@@ -36,7 +36,7 @@ class Colors: NSObject {
         var red = 255.0
         var green = 0.0
         var blue = 0.0
-        var colorNum = 20.0
+        let colorNum = 20.0
         var colors:[UIColor] = []
         while green < 256 {
             let color = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: 1.0)
